@@ -1,22 +1,27 @@
 \documentclass{article}
 
+\usepackage{hyperref}
+\usepackage[backend = biber, style=mla]{biblatex}
+\usepackage{xurl}
+\usepackage{amssymb}
+\addbibresource{sources.bib}
+
 \title{Nick H Extended Essay}
 \author{Nick Helbling}
 \date{September 2026}
 
 \begin{document}
-
 \maketitle
 
 \section{Introduction}
 The subject of regular polytopes may seem evident at first, but once you dig into how to construct, regulate, and standardize them it leans into spaces that initially do not seem applicable. More broadly, the area could be talked about as highly symmetric instead, rather than just regular. Leading to the question: how can the definition of regular polyhedra be generalized? For any given definition one could construct there needs to be boundaries: one for how general and one for how specific. Analogously, the size of a city could be specified as its proper, metro, area, or even larger; and this even leads us to think about a sort of spectrum of specifiers for the size of a city. Instead of thinking of the size of a city or the regularity of polytopes, imagine a scale that slides from the least symmetric to most. At a basic level, really only the geometrical features of polytopes are necessary. Such as their vertices, edges, and faces ($N_0, N_1, N_2$ respectively), which could also be generalized for higher dimensions ($N_k$). Generally, a polytope in the nth dimension (an $n$-$polytope$) is composed of $(n-1)$-$polytopes$ meeting at $(n-2)$-$polytopes$ and so on until they meet at \mbox{$0$-$polytopes$}. For a concrete example a $3$-$polytope$ (a polyhedron) is made of up of $2$-$polytopes$ (a polygon) meeting at $1$-$polytopes$ (a line) meeting at $0$-$polytopes$ (a point). This idea could be extended to the notion of an infinity-polygon (an aperigon), but that gets complicated quickly. Firstly we'll disprove that the only regular polyhedra are the platonic solids (the dice shapes), and then move into a classification tool for regular polygons, the Schläfli symbol. 
 
 \section{Methodology}
-I will approach my question using a lot of the preexisting terminology and concepts from foundational works. Standards like the Schläfli symbol and Coxeter diagrams to be able to read existing research and write in a way that is legible for others. The work of HSM Coxeter has been foundational to 21st century thinking. His two books “Regular Polytopes” and “Complex Regular Polytopes” are some of the most cited works in modern research on the subject. Other important works that seek to generalize and complete the set of polyhedra are “Abstract Regular Polyhedra” by McMullen and Schulte (who are also prominent names) and a paper “Regular Polytopes in Ordinary Space” written by the same authors. Before these books, a lot of the content was published individually in peer reviewed journals. They are part of the extensive bibliography in the books that cite a lot of their own work. This leans them to be rather scholarly, especially later versions of the books with revisions or more research added. The sources help me look at existing research and either identify the gaps in it, or evaluate the existing completeness. I can analyze the methods in which completeness is attempted to be proven. I will use the sources as building blocks for each other, modern papers on the topics all cite these “foundational” sources so they don’t need to build up terminology and systems for their new work. So I need to understand the building blocks that all of the high-level modern work relies on.
+I will approach my question using the preexisting terminology and concepts from foundational works. For example, notation like the Schläfli symbol lets me communicate with efficiency and clarity my math to others. Where this notation first appears is in the work of HSM Coxeter; he also has been foundational to 21st century thinking. His two books “Regular Polytopes” and “Complex Regular Polytopes” are some of the most cited works in modern research on the subject. Other important works that seek to generalize and complete the set of polyhedra are “Abstract Regular Polyhedra” by McMullen and Schulte (who are also prominent names in the 21st century) and a paper “Regular Polytopes in Ordinary Space” written by the same authors. Before these books, a lot of the content was published individually in peer reviewed journals. They are part of the extensive bibliography in the books that cite a lot of their own work. This leans them to be rather scholarly, especially later versions of the books with revisions or more research added. Though, there is a lot of self-citation and while, not explicitly bad, could present a lack of authenticity. The sources help me look at existing research and either identify the gaps in it, or evaluate the existing completeness. I can analyze the methods in which completeness is attempted to be proven. I will use the sources as building blocks for each other, modern papers on the topics all cite these “foundational” sources so they don’t need to build up terminology and systems for their new work. So I need to understand the building blocks that all of the high-level modern work relies on.
 
 \section{Background}
-\textbf{UNFINISHED} \newline
-Unmodified, its two numbers wrapped in braces: $\{p,q\}$. In three dimensions, p is a p-gon (a polygon with p sides) and q is the number of faces surrounding a vertex. Alternatively, the definition can be recursively defined for higher dimensions, where for an object in n the Schläfli symbol is {p1, p2, ..., pn-1} with facets (objects one dimension lower than n) and vertex figures being truncated by one on the left or right respectively.
+One of the earliest scholars on the topic of regular polyhedra was Ludwig Schläfli. He began needing to use specific notation to describe polytopes in all dimensions. So he created what is called today as the Schläfli Symbol (\cite{TheorieDerVielfachenKontinuität}). Unmodified, it is numbers numbers wrapped in braces: $\{p,q,r,...\}$. The different number of letters in the braces indicates the dimension of the polytope, and because the entries describe recursive information about each dimension for a polytope in $\mathbb{R}^n$ its Schläfli Symbol will have $n-1$ entries
+In three dimensions, p is a p-gon (a polygon with p sides) and q is the number of faces surrounding a vertex. Alternatively, the definition can be recursively defined for higher dimensions, where for an object in n the Schläfli symbol is {p1, p2, ..., pn-1} with facets (objects one dimension lower than n) and vertex figures being truncated by one on the left or right respectively.
 
 \section{Platonic Solids}
 
@@ -29,5 +34,10 @@ Unmodified, its two numbers wrapped in braces: $\{p,q\}$. In three dimensions, p
 \section {Classification}
 
 \section{Conclusion}
+
+\newpage
+
+\nocite{*}
+\printbibliography
 
 \end{document}
