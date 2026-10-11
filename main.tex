@@ -1,12 +1,19 @@
 \documentclass{article}
 
 \usepackage{hyperref}
-\usepackage[backend = biber, style=mla]{biblatex}
 \usepackage{xurl}
+
 \usepackage{amssymb}
-\addbibresource{sources.bib}
+
 \usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[backend = biber, style=mla]{biblatex}
+\addbibresource{sources.bib}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\graphicspath{{images/}}
 
 \title{Nick H Extended Essay}
 \author{Nick Helbling}
@@ -29,7 +36,24 @@ For ease of an example, we'll use an example of a dodecahedron (maybe see append
 One of the earliest scholars on the topic of regular polyhedra was Ludwig Schläfli. He began needing to use specific notation to describe polytopes in all dimensions. So he created what is called today as the Schläfli Symbol (\cite{TheorieDerVielfachenKontinuität}). The general form of a Schläfli Symbol in dimension $n$, is a comma separated list of $n-1$ numbers in braces: $\{p,q,r,...\}$. The simplest Schläfli Symbol being just one number in braces $\{p\}\mid\{p\in\mathbb{Z}^+\}$. In this case, $p$ is the number of sides on the corresponding polytope's polygons. For example, the dodecagon has a Schläfli Symbol of $\{12\}$ for its 12 sides. $\{1\}$ would refer to a line, $\{4\}$ refers to a square, and $\{6\}$ refers to a hexagon. Moving up a dimension, for the general form of a Schläfli Symbol $\{p,q\}\mid\{p,q\in\mathbb{Z}^+\}$ (a three-dimensional polytope), $q$ represents the number of $\{p\}$ surrounding a vertex. If we look at a cube, each \emph{face} is a square ($\{4\}$) and there are three of them meeting at each vertex. For a dodecahedron, there are 3 $\{5\}$ (three pentagons) meeting at each vertex. For the sake of completeness, a general regular polytope in dimension $n$ will have Schläfli Symbol $\{p,q,r,...,y,z\}$ (with $n$ entries). This means there are $z$ $\{p,q,r,...,y\}$ \emph{facets} meeting at its \emph{ridges} gathered around its \emph{peaks}.
 
 \section{Platonic Solids}
-In the background I have mentioned several examples of what are called the \emph{Platonic Solids}. Gleaning from the names, these were observed at least in the times of the ancient Greeks and Plato (their namesake). Plato describes five solids of particular regularity and conjectures that there must be no more than these. It is rather easy as well for us to determine, and informally prove that there are, in fact, only these 5. First we'll begin with a triangle, for there to be a non-trivial (that is, not remaining in two dimensions) arrangement of several we must connect edges of triangles together around a common vertex. If you place three identical triangles around one point, there leaves the exact space for a fourth at the bottom. Now we have a triangular pyramid, or a \emph{tetrahedron}. This construction also easily motivates the earlier Schläfli Symbol construction; we arranged $\{$
+In the background I have mentioned several examples of what are called the \emph{Platonic Solids}. Gleaning from the names, these were observed at least in the times of the ancient Greeks and Plato (their namesake). Plato describes five solids of particularly simple regularity and conjectures that there must be no more than these. It is rather easy as well for us to determine, and informally prove that there are, in fact, only these 5 (at least working with Plato's terms). First we will construct an equilateral triangle and three more copies thereof which we attach at their edges making a triangluar pyramid (Figure \ref{fig:tetrahedron_and_sideSelected}). 
+
+\begin{figure}[htbp]
+  \centering
+  
+  \begin{subfigure}{0.45 \textwidth}
+    \includegraphics[width = \textwidth]{tetrahedron.png}
+  
+  \end{subfigure}
+  \begin{subfigure}{0.45 \textwidth}
+    \includegraphics[width = \textwidth]{tetrahedron_sideSelected.png}
+  \end{subfigure}
+  
+  \caption{A tetrahedron, with and without a face highlighted (\cite{RegularPolyhedra})}
+  \label{fig:tetrahedron_and_sideSelected}
+\end{figure}
+
+Now I will use more rigourous notation to describe the thetrahedron, using the Schläfli Symbol. We observe from the tetrahedon that three are three triangular faces arranged around each vertex and we obtain the Schläfli Symbol $\{3,3\}$. Running through the rest of the Platonic solids: a cube is three squares arranged around a vertex with Schläfli Symbol $\{4,3\}$, an octahedron is four triangles arranged around a vertex with Schläfli Symbol $\{3,4\}$, a dodecahedron is three pentagons arranged around a vertex with Schläfli Symbol $\{5,3\}$, and an icosahderon is five triangles arranged around a vertex with Schläfli Symbol $\{3,5\}$. Vizualizations for the rest of the Platonic Solids, and all regular polytopes discussed here, are available at Smithers888's website, https://cpjsmith.uk/regularpolyhedra.
 
 \section{Kepler-Poinsot Polyhedra}
 
@@ -44,6 +68,6 @@ In the background I have mentioned several examples of what are called the \emph
 \newpage
 
 \nocite{*}
-\printbibliography
+\printbibliography{}
 
 \end{document}
