@@ -1,0 +1,15 @@
+{
+  "name": "LaTeX Environment",
+  "image": "://microsoft.com",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:1": {}
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y texlive-latex-extra texlive-science latexmk",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop"
+      ]
+    }
+  }
+}
