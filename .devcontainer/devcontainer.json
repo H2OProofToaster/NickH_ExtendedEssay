@@ -1,6 +1,6 @@
 {
   "name": "LaTeX Environment",
-  "image": "://microsoft.com",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:1": {}
   },
