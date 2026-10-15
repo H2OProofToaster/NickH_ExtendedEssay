@@ -4,7 +4,7 @@
   "features": {
     "ghcr.io/devcontainers/features/common-utils:1": {}
   },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y texlive-latex-extra texlive-science latexmk",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y texlive-latex-extra texlive-science latexmk biber",
   "customizations": {
     "vscode": {
       "extensions": [
