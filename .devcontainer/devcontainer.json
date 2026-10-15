@@ -10,7 +10,11 @@
       "extensions": [
         "James-Yu.latex-workshop",
         "vsls-contrib.gitdoc"
-      ]
+      ],
+
+      "settings": {
+        "gitdoc.filePattern": "**/main.tex"
+      }
     }
   }
 }
