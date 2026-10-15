@@ -10,3 +10,6 @@
 *.pdf
 *.xml
 *.gz
+
+# vscode
+.vscode/
