@@ -23,20 +23,73 @@
 \maketitle
 
 \section{Introduction}
-The subject of regular polytopes may seem evident at first, but once you dig into how to construct, regulate, and standardize them it leans into spaces that initially do not seem applicable. More broadly, the area could be talked about as highly symmetric instead, rather than just regular. Leading to the question: how can the definition of regular polyhedra be generalized? For any given definition one could construct there needs to be boundaries: one for how general and one for how specific. Analogously, the size of a city could be specified as its proper, metro, area, or even larger; and this even leads us to think about a sort of spectrum of specifiers for the size of a city. Instead of thinking of the size of a city or the regularity of polytopes, imagine a scale that slides from the least symmetric to most. At a basic level, really only the geometrical features of polytopes are necessary. Such as their vertices, edges, and faces, which could also be generalized for higher dimensions ($N_k$). Generally, a polytope in the nth dimension (an $n$-$polytope$) is composed of $(n-1)$-$polytopes$ meeting at $(n-2)$-$polytopes$ and so on until they meet at \mbox{$0$-$polytopes$}. For a concrete example a $3$-$polytope$ (a polyhedron) is made of up of $2$-$polytopes$ (a polygon) meeting at $1$-$polytopes$ (a line) meeting at $0$-$polytopes$ (a point). This idea could be extended to the notion of an infinity-polygon (an aperigon), but that gets complicated quickly. Firstly we'll disprove that the only regular polyhedra are the platonic solids (the dice shapes), and then move into a classification tool for regular polygons, the Schläfli symbol. 
+The subject of regular polytopes may seem evident at first, but once you dig into how to construct, 
+regulate, and standardize them it leans into spaces that initially do not seem applicable. 
+More broadly, the area could be talked about as highly symmetric instead, rather than just regular. 
+Leading to the question: how can the definition of regular polyhedra be generalized? For any given definition one could construct there needs to be boundaries: 
+one for how general and one for how specific. Analogously, the size of a city could be specified as its proper, metro, area, or even larger; 
+and this even leads us to think about a sort of spectrum of specifiers for the size of a city. 
+Instead of thinking of the size of a city or the regularity of polytopes, imagine a scale that slides from the least symmetric to most. 
+At a basic level, really only the geometrical features of polytopes are necessary. Such as their vertices, edges, and faces, 
+which could also be generalized for higher dimensions ($N_k$). Generally, a polytope in the nth dimension (an $n$-$polytope$) is composed of $(n-1)$-$polytopes$ 
+meeting at $(n-2)$-$polytopes$ and so on until they meet at \mbox{$0$-$polytopes$}. For a concrete example a $3$-$polytope$ (a polyhedron) is made of up of $2$-$polytopes$ 
+(a polygon) meeting at $1$-$polytopes$ (a line) meeting at $0$-$polytopes$ (a point). 
+This idea could be extended to the notion of an infinity-polygon (an aperigon), but that gets complicated quickly. 
+Firstly we'll disprove that the only regular polyhedra are the platonic solids (the dice shapes), and then move into a classification tool for regular polygons, 
+the Schläfli symbol. 
 
 \section{Methodology}
-I will approach my question using the preexisting terminology and concepts from foundational works. For example, notation like the Schläfli symbol lets me communicate with efficiency and clarity my math to others. Where this notation first appears is in the work of HSM Coxeter; he also has been foundational to 21st century thinking. His two books “Regular Polytopes” and “Complex Regular Polytopes” are some of the most cited works in modern research on the subject. Other important works that seek to generalize and complete the set of polyhedra are “Abstract Regular Polyhedra” by McMullen and Schulte (who are also prominent names in the 21st century) and a paper “Regular Polytopes in Ordinary Space” written by the same authors. Before these books, a lot of the content was published individually in peer reviewed journals. They are part of the extensive bibliography in the books that cite a lot of their own work. This leans them to be rather scholarly, especially later versions of the books with revisions or more research added. Though, there is a lot of self-citation and while, not explicitly bad, could present a lack of authenticity. The sources help me look at existing research and either identify the gaps in it, or evaluate the existing completeness. I can analyze the methods in which completeness is attempted to be proven. I will use the sources as building blocks for each other, modern papers on the topics all cite these “foundational” sources so they don’t need to build up terminology and systems for their new work. So I need to understand the building blocks that all of the high-level modern work relies on.
+I will approach my question using the preexisting terminology and concepts from foundational works. 
+For example, notation like the Schläfli symbol lets me communicate with efficiency and clarity my math to others. 
+Where this notation first appears is in the work of HSM Coxeter; he also has been foundational to 21st century thinking. 
+His two books “Regular Polytopes” and “Complex Regular Polytopes” are some of the most cited works in modern research on the subject. 
+Other important works that seek to generalize and complete the set of polyhedra are “Abstract Regular Polyhedra” by McMullen and Schulte 
+(who are also prominent names in the 21st century) and a paper “Regular Polytopes in Ordinary Space” written by the same authors. 
+Before these books, a lot of the content was published individually in peer reviewed journals. 
+They are part of the extensive bibliography in the books that cite a lot of their own work. This leans them to be rather scholarly, 
+especially later versions of the books with revisions or more research added. Though, there is a lot of self-citation and while, not explicitly bad, 
+could present a lack of authenticity. The sources help me look at existing research and either identify the gaps in it, or evaluate the existing completeness. 
+I can analyze the methods in which completeness is attempted to be proven. I will use the sources as building blocks for each other, 
+modern papers on the topics all cite these “foundational” sources so they don’t need to build up terminology and systems for their new work. 
+So I need to understand the building blocks that all of the high-level modern work relies on.
 
 \section{Background}
 \subsection{Geometrical Terms}
-For ease of an example, we'll use an example of a dodecahedron (maybe see appendices?). The dodecahedron is the arrangement of 12 pentagons with three meeting at each \emph{vertex}. \emph{Vertices} are the points where \emph{lines} meet. One dimension up, an \emph{edge} is where \emph{polygons} meet; a dodecahedron has 30 \emph{edges}. Additionally, a \emph{face} can be used to refer to any element of a polytope in any dimension. Then, this is where it gets hard for us to visualize; we can imagine two flat shapes coming together in the third dimension (i.e. two non-coplanar polygons meeting at an edge in $\mathbb{R}^3$) and we can imagine polyhedra meeting together on their \emph{faces} while still staying in $\mathbb{R}^3$ (a 3 dimensional cartesian coordinate system, for example). However, it is (verifiably) impossible for humans to imagine polyhedra meeting at polygons in the fourth dimension. This doesn't mean we don't have the tools to describe greater than three dimensional shapes, as we'll see with the Schläfli Symbol. Recapping, \emph{vertices} are places where \emph{lines} or $1$-$polytopes$ meet to become \emph{edges}, which are places for \emph{polygons} or $2$-$polytopes$ meet to become faces. It would get tiring to have to count up to an arbitrary dimension to discuss its polytope's traits, thus we can use language that describes from the top down. For a given $n$-$polytope$ in $\mathbb{R}^n$, the elements that make it up and are in $\mathbb{R}^{n-1}$ are called \emph{facets}. For the dodecahedron example, its \emph{facets} are the 12 pentagonal \emph{faces}. Similarly we can define a \emph{ridge} to be the \emph{faces} in $\mathbb{R}^{n-2}$ and \emph{peaks} to be the \emph{faces} in $\mathbb{R}^{n-3}$.
+For ease of an example, we'll use an example of a dodecahedron (maybe see appendices?). 
+The dodecahedron is the arrangement of 12 pentagons with three meeting at each \emph{vertex}. \emph{Vertices} are the points where \emph{lines} meet. 
+One dimension up, an \emph{edge} is where \emph{polygons} meet; a dodecahedron has 30 \emph{edges}. 
+Additionally, a \emph{face} can be used to refer to any element of a polytope in any dimension. Then, this is where it gets hard for us to visualize; 
+we can imagine two flat shapes coming together in the third dimension 
+(i.e. two non-coplanar polygons meeting at an edge in $\mathbb{R}^3$) and we can imagine polyhedra meeting together on their \emph{faces} while still staying in 
+$\mathbb{R}^3$ (a 3 dimensional cartesian coordinate system, for example). 
+However, it is (verifiably) impossible for humans to imagine polyhedra meeting at polygons in the fourth dimension. 
+This doesn't mean we don't have the tools to describe greater than three dimensional shapes, as we'll see with the Schläfli Symbol. 
+Recapping, \emph{vertices} are places where \emph{lines} or $1$-$polytopes$ meet to become \emph{edges}, 
+which are places for \emph{polygons} or $2$-$polytopes$ meet to become faces. 
+It would get tiring to have to count up to an arbitrary dimension to discuss its polytope's traits, thus we can use language that describes from the top down. 
+For a given $n$-$polytope$ in $\mathbb{R}^n$, the elements that make it up and are in $\mathbb{R}^{n-1}$ are called \emph{facets}. 
+For the dodecahedron example, its \emph{facets} are the 12 pentagonal \emph{faces}. 
+Similarly we can define a \emph{ridge} to be the \emph{faces} in $\mathbb{R}^{n-2}$ and \emph{peaks} to be the \emph{faces} in $\mathbb{R}^{n-3}$.
 
 \subsection{Schläfli Symbols}
-One of the earliest scholars on the topic of regular polyhedra was Ludwig Schläfli. He began needing to use specific notation to describe polytopes in all dimensions. So he created what is called today as the Schläfli Symbol (\cite{TheorieDerVielfachenKontinuität}). The general form of a Schläfli Symbol in dimension $n$, is a comma separated list of $n-1$ numbers in braces: $\{p,q,r,...\}$. The simplest Schläfli Symbol being just one number in braces $\{p\}\mid\{p\in\mathbb{Z}^+\}$. In this case, $p$ is the number of sides on the corresponding polytope's polygons. For example, the dodecagon has a Schläfli Symbol of $\{12\}$ for its 12 sides. $\{1\}$ would refer to a line, $\{4\}$ refers to a square, and $\{6\}$ refers to a hexagon. Moving up a dimension, for the general form of a Schläfli Symbol $\{p,q\}\mid\{p,q\in\mathbb{Z}^+\}$ (a three-dimensional polytope), $q$ represents the number of $\{p\}$ surrounding a vertex. If we look at a cube, each \emph{face} is a square ($\{4\}$) and there are three of them meeting at each vertex. For a dodecahedron, there are 3 $\{5\}$ (three pentagons) meeting at each vertex. For the sake of completeness, a general regular polytope in dimension $n$ will have Schläfli Symbol $\{p,q,r,...,y,z\}$ (with $n$ entries). This means there are $z$ $\{p,q,r,...,y\}$ \emph{facets} meeting at its \emph{ridges} gathered around its \emph{peaks}.
+One of the earliest scholars on the topic of regular polyhedra was Ludwig Schläfli. He began needing to use specific notation to describe polytopes in all dimensions. 
+So he created what is called today as the Schläfli Symbol (\cite{TheorieDerVielfachenKontinuität}). The general form of a Schläfli Symbol in dimension $n$, 
+is a comma separated list of $n-1$ numbers in braces: $\{p,q,r,...\}$. The simplest Schläfli Symbol being just one number in braces $\{p\}\mid\{p\in\mathbb{Z}^+\}$. 
+In this case, $p$ is the number of sides on the corresponding polytope's polygons. For example, the dodecagon has a Schläfli Symbol of $\{12\}$ for its 12 sides. 
+$\{1\}$ would refer to a line, $\{4\}$ refers to a square, and $\{6\}$ refers to a hexagon. Moving up a dimension, for the general form of a Schläfli Symbol 
+$\{p,q\}\mid\{p,q\in\mathbb{Z}^+\}$ (a three-dimensional polytope), $q$ represents the number of $\{p\}$ surrounding a vertex. 
+If we look at a cube, each \emph{face} is a square ($\{4\}$) and there are three of them meeting at each vertex. 
+For a dodecahedron, there are 3 $\{5\}$ (three pentagons) meeting at each vertex. For the sake of completeness, 
+a general regular polytope in dimension $n$ will have Schläfli Symbol $\{p,q,r,...,y,z\}$ (with $n$ entries). 
+This means there are $z$ $\{p,q,r,...,y\}$ \emph{facets} meeting at its \emph{ridges} gathered around its \emph{peaks}.
 
 \section{Platonic Solids}
-In the background I have mentioned several examples of what are called the \emph{Platonic Solids}. Gleaning from the names, these were observed at least in the times of the ancient Greeks and Plato (their namesake). Plato describes five solids of particularly simple regularity and conjectures that there must be no more than these. It is rather easy as well for us to determine, and informally prove that there are, in fact, only these 5 (at least working with Plato's terms). First we will construct an equilateral triangle and three more copies thereof which we attach at their edges making a triangluar pyramid (Figure \ref{fig:tetrahedron_and_sideSelected}). 
+In the background I have mentioned several examples of what are called the \emph{Platonic Solids}. Gleaning from the names, 
+these were observed at least in the times of the ancient Greeks and Plato (their namesake). 
+Plato describes five solids of particularly simple regularity and conjectures that there must be no more than these. It is rather easy as well for us to determine, 
+and informally prove that there are, in fact, only these 5 (at least working with Plato's terms). 
+First we will construct an equilateral triangle and three more copies thereof which we attach at their edges making a triangluar pyramid 
+(Figure \ref{fig:tetrahedron_and_sideSelected}). 
 
 \begin{figure}[htbp]
   \centering
@@ -53,7 +106,13 @@ In the background I have mentioned several examples of what are called the \emph
   \label{fig:tetrahedron_and_sideSelected}
 \end{figure}
 
-Now I will use more rigourous notation to describe the thetrahedron, using the Schläfli Symbol. We observe from the tetrahedon that three are three triangular faces arranged around each vertex and we obtain the Schläfli Symbol $\{3,3\}$. Running through the rest of the Platonic solids: a cube is three squares arranged around a vertex with Schläfli Symbol $\{4,3\}$, an octahedron is four triangles arranged around a vertex with Schläfli Symbol $\{3,4\}$, a dodecahedron is three pentagons arranged around a vertex with Schläfli Symbol $\{5,3\}$, and an icosahderon is five triangles arranged around a vertex with Schläfli Symbol $\{3,5\}$. Vizualizations for the rest of the Platonic Solids, and all regular polytopes discussed here, are available at Smithers888's website, https://cpjsmith.uk/regularpolyhedra.
+Now I will use more rigourous notation to describe the thetrahedron, using the Schläfli Symbol. 
+We observe from the tetrahedon that three are three triangular faces arranged around each vertex and we obtain the Schläfli Symbol $\{3,3\}$. 
+Running through the rest of the Platonic solids: a cube is three squares arranged around a vertex with Schläfli Symbol $\{4,3\}$, 
+an octahedron is four triangles arranged around a vertex with Schläfli Symbol $\{3,4\}$, 
+a dodecahedron is three pentagons arranged around a vertex with Schläfli Symbol $\{5,3\}$, 
+and an icosahderon is five triangles arranged around a vertex with Schläfli Symbol $\{3,5\}$. Vizualizations for the rest of the Platonic Solids, 
+and all regular polytopes discussed here, are available at Smithers888's website, https://cpjsmith.uk/regularpolyhedra.
 
 \section{Kepler-Poinsot Polyhedra}
 
